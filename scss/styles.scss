@@ -1,5 +1,6 @@
 @import url('custom-fonts.css');
 @import url('jquery.rateyo.min.css');
+
 //***** DEFAULT COLORS *****//
 $white: white;
 $black: black;
@@ -8,11 +9,12 @@ $uhNormalGrey: #6d6d6d; // Normal texts, Normal Tab Icons
 $uhGrey: #777777; 
 $uhLightGrey: #a5a5a5; //Disable Icons, Font color for unimportant button, Select Input Color
 $uhUltraLightGrey: #e8e8e8; // Placeholders, Unimportant Button
-$uhDarkRed: #f3676c; //slider fonts
+$uhDarkRed: #f3676c; //slider font color
 $uhRed: #f3676c; //Titles, Sub headers with links, Active TAB Icons
 $uhLightRed: #ffa5a8; //Error button
 $uhBlue: #719ffb; //Links and Buttons
 $uhGreen: #4fe982; //Success Button
+
 //***** GOBAL STYLES AND FIXES *****//
 body {
     font-family: 'Source Sans Pro', sans-serif;
