@@ -1,0 +1,895 @@
+@import url('custom-fonts.css');
+@import url('jquery.rateyo.min.css');
+//***** DEFAULT COLORS *****//
+$white: white;
+$black: black;
+$uhDarkGrey: #3f3f3f; // Hashtags
+$uhNormalGrey: #6d6d6d; // Normal texts, Normal Tab Icons
+$uhGrey: #777777; 
+$uhLightGrey: #a5a5a5; //Disable Icons, Font color for unimportant button, Select Input Color
+$uhUltraLightGrey: #e8e8e8; // Placeholders, Unimportant Button
+$uhDarkRed: #f3676c; //slider fonts
+$uhRed: #f3676c; //Titles, Sub headers with links, Active TAB Icons
+$uhLightRed: #ffa5a8; //Error button
+$uhBlue: #719ffb; //Links and Buttons
+$uhGreen: #4fe982; //Success Button
+//***** GOBAL STYLES AND FIXES *****//
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    .page-content{
+        background: white;
+    }
+}
+
+body,
+p {
+    color: #6d6d6d;
+}
+
+//--buttons
+a,
+button {
+    color: $uhRed;
+
+    &.uh-no-border{
+        border: none !important;
+    }
+    &.uh-follow-btn{
+        color: $uhGrey !important;
+        background: white !important;
+        margin-top: 4px;
+        border: 1px $uhGrey solid !important;
+        width: 50%;
+
+        span{
+            color: $uhGrey !important;
+            &.uh-icon{
+                position: absolute;
+                left: 10px;
+                top: 4px;
+            }
+            &.uh-icon-text{
+                font-family: 'Source Sans Pro', sans-serif !important;
+            }
+        }
+    }
+
+    &.uh-transparent{
+        background: transparent !important
+    }
+}
+.uh-add-review-btn{
+    background: $uhRed;
+    color: white;
+}
+.uh-full-width{
+    width: 100%;
+}   
+
+//--floats
+.uh-float-left{
+    float: left;
+}
+.uh-float-right{
+    float: right;
+}
+.uh-float-none{
+    float: none;
+}
+
+//--fonts
+.uh-bold-font{
+    font-weight: bold;
+}
+.uh-font-20 {
+    font-size: 20px;
+}
+
+.uh-font-25 {
+    font-size: 25px;
+}
+
+.uh-font-30 {
+    font-size: 30px;
+}
+
+.uh-font-35 {
+    font-size: 35px;
+}
+
+.uh-font-40 {
+    font-size: 40px;
+}
+
+.uh-font-45 {
+    font-size: 45px;
+}
+
+.uh-font-50 {
+    font-size: 50px;
+}
+
+.uh-avatar {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 200px;
+}
+.uh-hashtag{
+  font-weight: bold;
+  color: $uhDarkGrey !important;
+}
+//--text position
+.uh-text-center {
+    text-align: center !important;
+}
+
+.uh-text-left {
+    text-align: left !important;
+}
+
+.uh-text-right {
+    text-align: right !important;
+}
+
+.uh-hide {
+    display: none !important;
+}
+
+//--paddings
+.uh-padding {
+    padding: 10px !important;
+}
+.uh-top-padding {
+    padding-top: 10px !important;
+}
+.uh-left-padding {
+    padding-left: 10px !important;
+}
+.uh-right-padding {
+    padding-right: 10px !important;
+}
+.uh-bottom-padding {
+    padding-bottom: 10px !important;
+}
+
+.uh-no-padding {
+    padding: 0px !important;
+}
+.uh-no-left-padding {
+    padding-left: 0px !important;
+}
+.uh-no-right-padding {
+    padding-right: 0px !important;
+}
+.uh-no-top-padding {
+    padding-top: 0px !important;
+}
+.uh-no-bottom-padding {
+    padding-bottom: 0px !important;
+}
+
+//--margins
+.uh-margin {
+    margin: 10px !important;
+}
+.uh-top-margin {
+    margin-top: 10px !important;
+}
+.uh-left-margin {
+    margin-left: 10px !important;
+}
+.uh-right-margin {
+    margin-right: 10px !important;
+}
+.uh-bottom-margin {
+    margin-bottom: 10px !important;
+}
+
+.uh-no-margin {
+    margin: 0px !important;
+}
+.uh-no-left-margin {
+    margin-left: 0px !important;
+}
+.uh-no-right-margin {
+    margin-right: 0px !important;
+}
+.uh-no-top-margin {
+    margin-top: 0px !important;
+}
+.uh-no-bottom-margin {
+    margin-bottom: 0px !important;
+}
+
+//--thumbnails
+.uh-thumb{
+    width: 97%;
+    box-shadow: 0px 0px 10px;
+    padding: 4px;
+}
+.uh-thumb-50{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+//--preloaders
+.preloader {
+  top: 3px;
+  position: relative;
+  
+    &.big {
+        width: 42px;
+        height: 42px
+    }
+}
+
+//swiper pagination
+.swiper-container-horizontal>.swiper-pagination.uh-inside-pages {
+    right: 9px !important;
+    text-align: right;
+    left: inherit !important;
+    width: 70px;
+    overflow: scroll;
+    height: 95%;
+
+    .swiper-pagination-bullet{
+        width: 10px;
+        height: 10px;
+    }
+}
+
+//--navigation header -  Default Status bar background
+.statusbar-overlay {
+    background: transparent !important;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+}
+
+//-- Change Status bar background when panel opened
+body.with-panel-left-cover .statusbar-overlay {
+    //background: #222;
+}
+
+//***** MAIN VIEW CONTAINER *****//
+//this holds the main view container for all pages
+.uh-main-view-container {
+    //--nav bar top
+    .uh-navbar-wrap {
+        background: $uhRed;
+        color: $white;
+        a,
+        span,
+        button,
+        i {
+            color: $white;
+        }
+        &.uh-transparent-bg {
+            background: transparent !important;
+            &::after {
+                background-color: transparent !important;
+            }
+        }
+        .center{
+            overflow: auto;
+            
+            &.uh-home-logo-wrap{
+                overflow: auto !important;
+            }
+        }
+        .uh-navbar-single-post,
+        .uh-navbar-home,
+        .uh-navbar-search,
+        .uh-navbar-camera,
+        .uh-navbar-notifications,
+        .uh-navbar-profile {
+            background: $uhRed;
+        }
+        .uh-navbar-search {
+            .center{
+                overflow: auto !important;
+            }
+            .uh-search-input {
+                min-width: 500px;
+                padding: 5px;
+                background: transparent;
+                color: white;
+                font-size: 20px;
+                outline: none !important;
+                border: none !important;
+                &::placeholder {
+                    color: rgb(255, 187, 187);
+                    font-weight: bold;
+                }
+            }
+        }
+        .uh-homepage-slider-navbar {
+            background: transparent !important;
+            .uh-logo-wrap-home {
+                text-align: center;
+                width: 100%;
+                margin-top: 90px;
+                .uh-logo {
+                    color: black !important;
+                    text-shadow: 0px 0px 30px white;
+                    font-size: 40px;
+                    padding: 10px;
+                }
+            } //   &::after {
+            //     background-color: transparent !important;
+            // }
+        } //.uh-homepage-slider-navbar
+
+        //profile header
+        .uh-navbar-profile{
+            .uh-profile-header{
+                &::after{
+                    background: none !important;
+                }
+                //margin-top: 30px !important;
+                // padding: 60px 0px 50px 0px !important;
+                height: auto;
+                background: white !important;
+                p, p.uh-list-item{
+                    line-height: 14px;
+                    font-weight: normal;
+                    color: $uhLightGrey;
+                    font-size: 13px;
+                    margin: 0px;
+                }
+                a{
+                    color: $uhRed;
+                }
+                .uh-avatar{
+                    width: 90%;
+                }
+                .uh-profile-name{
+                    font-weight: bold;
+                    color: $uhGrey;
+                    //margin-top: -20px !important;
+                    margin: 0px;
+                    position: relative;
+                }
+                .uh-profile-phone{}
+                .uh-profile-position{}
+                .uh-profile-rating{
+                    span{
+                    color: $uhRed;
+                    top: 1px;
+                    position: relative;
+                    }
+                }
+            }
+        }
+    } //.uh-navbar-wrap
+    //--sub nav bar top
+    .uh-subnavbar-wrap {
+        .button {
+            background: $uhLightRed;
+            border: none;
+            &.active {
+                background: $uhDarkRed;
+            }
+        }
+    } //--nav bar bottom
+    .uh-toolbar-bottom {
+        // background: transparent;
+        // &::before{
+        //   background: transparent;
+        // }
+        .uh-main-btn-nav {
+            background: transparent !important;
+            border: none;
+            color: $uhGrey !important;
+            &.active {
+                color: $uhRed !important;
+            }
+        }
+        .badge {
+            height: 19px;
+            top: 5px;
+            font-size: 8px;
+            position: absolute;
+            right: 0px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+    } //.uh-toolbar-bottom
+    //********** pages wrap **********//
+    .uh-pages-wrap {
+        //background: url('../img/chicken-sisig-ulamHunter.jpg');
+        //--uh-content-block
+        .uh-content-block {
+            //height: 100%;//82.2%;
+            padding: 15px 0px !important;
+
+            &.uh-single-post{
+                padding-top: 5px !important;
+                
+                .uh-reviews-wrap{
+                    .item-text{
+                        overflow: unset !important;
+                        height: auto !important;
+                        text-overflow: unset !important;
+                        display: block !important;
+                        //font-size: 13px;
+                        //line-height: 15px;
+
+                        .uh-reviewer{
+                            font-weight: bold;
+                            color: $uhDarkRed;
+                        }
+                        &.uh-post-reviews-date-wrap{
+                            font-size: 10px !important;
+                            color: $uhBlue;
+
+                            .uh-time{
+                                color: $uhLightGrey;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            &.uh-camera-wrap{
+                .uh-change-photo-btn{
+                    position: relative;
+                    // top: 30px;
+                    margin-right: 8px;
+                    float: right;
+                    color: white;
+                    text-shadow: 0px 0px 11px #000;
+                }
+            }
+        } 
+        //********** SMART SELECT **********//
+        .smart-select-page {
+            .searchbar{
+                margin-top: 43px;
+            }
+            .list-block{
+                margin: 0px;
+                
+            }
+           
+        }
+
+        //********** ADD REVIEWS FORM **********//
+        .uh-newly-added-review {
+            display: none;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 20px;
+        }
+        .uh-newly-added-review {
+
+            form.uh-add-review{
+                &  > div{
+                    clear: both;
+                    margin-bottom: 5px;
+                    display: flow-root;
+                }
+                .uh-new-photos-wrap{
+                    img, a{
+                        float: left;
+                    }
+                }
+                .uh-stars-wrap{
+                    a{
+                        float: left;
+                        font-size: 20px;
+                        color: $uhLightGrey;
+
+                        span.active{
+                            color: $uhBlue;
+                        }
+                    }
+                }
+                .uh-star-badge{
+                    background: $uhBlue;
+                    color: white;
+                    margin-top: 7px;
+                }
+                .uh-review-input-content{
+                    font-size: 15px;
+                    color: $uhGrey;
+
+                    &::placeholder{
+                        color: $uhUltraLightGrey;
+                        font-size: 20px;
+                    }
+                }
+                .uh-cancel-review-btn{
+                    line-height: 30px;
+                    font-size: 10px;
+                    background: $uhUltraLightGrey;
+                    color: $uhDarkGrey;
+                }
+            }
+        }
+        
+        
+        //********** HOMEPAGE SLIDERS **********//
+        .uh-swiper-wrap {
+            height: 100%;
+            .uh-slide-item {
+                text-align: center;
+                img {
+                    width: 70%;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%)
+                }
+                &.uh-slide-1,
+                &.uh-slide-2,
+                &.uh-slide-3,
+                &.uh-slide-4 {
+                    background-position: center !important;
+                    background-size: cover !important;
+                    background-repeat: no-repeat !important;
+                }
+                &.uh-slide-1 {
+                    background: url('../img/slider-images/chopsuey-ulamHunter.jpg');
+                }
+                &.uh-slide-2 {
+                    background: url('../img/slider-images/sinigang-na-baboy-ulamHunter.jpg');
+                }
+                &.uh-slide-3 {
+                    background: url('../img/slider-images/chicken-sisig-ulamHunter.jpg');
+                }
+                &.uh-slide-4 {
+                    background: url('../img/slider-images/man-slicing-ulamHunter.jpg');
+                }
+            }
+            .uh-skip-btn-wrap {
+                position: absolute;
+                bottom: 50px;
+                text-align: center;
+                width: 100%;
+                z-index: 1;
+                a {
+                    color: white;
+                    text-shadow: 0px 0px 20px black;
+                }
+            }
+        } //.uh-swiper-wrap
+        //********** SEARCH PAGE **********//
+        .uh-search-item-wrap {
+            // padding: 10px;
+            // -moz-column-width: 13em;
+            // -webkit-column-width: 13em;
+            // -moz-column-gap: 1em;
+            // -webkit-column-gap: 1em;
+            .uh-search-item {
+                display: inline-block; //margin: 0.25rem;
+                //padding: 1rem;
+                width: 100%;
+            }
+        } //.uh-search-item-wrap
+        //********** PROFILE PAGE **********//
+        .uh-profile-content-wrap{
+            .uh-profile-content-inner{
+                margin-top: 45%;
+                p{
+                    line-height: 14px;
+                }
+                
+                .uh-reviews-wrap{
+                    border: 1px dotted #ccc;
+                    padding: 5px 10px 0px 10px;
+                    margin: 5px 10px 10px 10px;
+
+                    span.uh-reviews-number{
+                    position: relative;
+                    top: -8px;
+                    }
+                }
+                .uh-menus-wrap{
+                    padding: 10px;
+
+                    .uh-masonry-wrap{
+                    margin-top: 0px;
+                    }
+                }
+            }
+        }//.uh-profile-content-wrap
+        //********** NOTIFICATIONS PAGE **********//
+        .uh-notifications-wrap {
+            .uh-title {
+                color: $uhNormalGrey;
+                font-weight: bold;
+                margin: 0px;
+            }
+            .uh-clear-btn{
+              bottom: -6px;
+              position: relative;
+            }
+            .uh-list-block{
+              margin: 0px;
+              .item-text{
+                height: auto !important;
+              }
+              .item-media{
+                img{
+                  width:100%;
+                }
+              }
+              .uh-list-content{
+                font-weight: normal;
+                color: $uhLightGrey;
+              }
+              .link{
+                font-weight: bold;
+                color: $uhRed;
+              }
+              .uh-time{
+                font-size: 12px;
+                margin-left: 10px;
+              }
+            }
+        } //.uh-notifications-wrap
+        //********** Main card styles **********//
+        .uh-card-wrap {
+            //margin: 10px 1px 5px 2px;
+            .uh-img-wrap,
+            .card-header {
+                height: 50vw;
+                background-size: cover;
+                background-position: center;
+
+                .uh-star-wrap,
+                .uh-posted-date,
+                .link {
+                    color: white;
+                    text-shadow: 0px 0px 10px black;
+                    height: auto;
+                    line-height: inherit;
+                    margin: 0px;
+                }
+                .uh-posted-date{
+                    margin: 0px;
+                    font-size: 10px;
+                }
+            }
+            .card-content {
+                .card-content-inner {
+                    //padding: 5px 15px;
+                    .uh-post-title {
+                        margin: 0px 0px 3px 0px;
+                        color: $uhRed;
+                        line-height: 18px;
+
+                        p{
+                            color: $uhDarkGrey;
+                        }
+                    }
+                    .uh-post-reviews {
+                        span {
+                            color: $uhBlue;
+
+                            // .uh-star-rating-words{
+                            //     color: $uhDarkGrey !important;
+                            // }
+                        }
+
+                    }
+                    p {
+                        margin: 0px;
+                        color: $uhLightGrey;
+                    }
+                }
+            }
+            .uh-reviews-wrap{
+                font-size: 14px;
+                line-height: 17px;
+                font-weight: normal;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            
+        } //.uh-card-wrap
+
+        //********** SINGLE POST **********//
+
+        .uh-all-photos-wrap{
+            .uh-img-wrap{
+                height: 75vw !important;
+            }
+        }
+        //********** MASONRY LAYOUT **********//
+        // .uh-masonry-wrap {
+        //   padding: 10px;
+        //   margin-top: 30px;
+        //   -moz-column-width: 13em;
+        //   -webkit-column-width: 13em;
+        //   -moz-column-gap: 1em;
+        //   -webkit-column-gap: 1em;
+        //   .uh-masonry-item {
+        //       display: inline-block; //margin: 0.25rem;
+        //       width: 100%;
+
+        //       .uh-card-wrap{
+        //           margin-left: 0px;
+        //           margin-right: 0px;
+        //       }
+        //     }
+        // }
+         //.uh-masonry-wrap
+        
+    } //.uh-pages-wrap
+    //********** login wrap **********//
+    .uh-login-form-wrap {
+        .uh-login-form-header {
+            background: $uhRed;
+            color: white;
+            margin: 0px;
+            max-width: 100%;
+            padding: 50px 0px;
+            .uh-logo {
+                font-size: 40px;
+            }
+            .uh-pronounce {
+                margin-top: -10px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .uh-description {
+                color: white;
+                font-size: 0.4em;
+                padding: 0px 30px;
+                text-align: left;
+            }
+        }
+    } //.uh-login-form-wrap
+
+    //********** ADD NEW REVIEW WRAP **********//
+    .uh-add-review-details{
+        width: 100%;
+    }
+    .uh-add-review-details,
+    .uh-add-new-review-wrap{
+        background: white;
+        padding: 10px;
+        .uh-add-new-review-body{
+            a.item-link{
+                background: $uhUltraLightGrey !important;
+            }
+            .uh-new-image{
+                width: 100%;
+                max-height: 200px;
+            }
+
+            .uh-change-photo-btn{
+                position: relative;
+                top: 45px;
+                right: 10px;
+                float: right;
+                margin-top: -36px;
+                color: white;
+                text-shadow: 0px 0px 11px #000;
+            }
+            .uh-stars-wrap{
+                a{
+                    float: left;
+                    font-size: 20px;
+                    color: $uhLightGrey;
+
+                    span.active{
+                        color: $uhBlue;
+                    }
+                }
+            }
+            .uh-star-badge{
+                background: $uhBlue;
+                color: white;
+                margin-top: 7px;
+            }
+            .uh-add-food-name,
+            .uh-add-food-owner{
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            textarea.uh-review-input-content{
+                border: none;
+                width: 100% !important;
+                font-size: 15px;
+                color: $uhGrey;
+
+                &::placeholder{
+                    color: $uhUltraLightGrey;
+                    font-size: 20px;
+                }
+            }
+
+            .uh-add-new-result-wrap{
+                margin-top: 5px; 
+                .uh-add-new-result-content{
+                    color: white;
+                    padding: 5px;
+                    background: $uhDarkGrey;
+                    border-radius: 5px;
+
+                    &.not-available{
+                        background: $uhLightRed;
+                    }
+                    &.available{
+                        background: $uhGreen;
+                    }
+                }
+            }
+            .uh-check-result{
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
+    }//.uh-add-new-review-wrap, .uh-add-review-details
+
+} //.uh-main-view-container
+
+
+//**** POPUP MODAL *****//
+.uh-popup-modal-wrap{
+    &.uh-add-new-review-popup{
+    
+        .uh-popup-modal-content{
+            margin: 0px;
+            padding: 0px;
+
+            .uh-popup-title-header{
+                padding: 10px;
+                margin: 0px;
+                background: $uhRed;
+                color: white;
+
+                a{
+                    color: white;
+                }
+            }
+            .uh-popup-body{
+                padding: 10px;
+
+                .uh-new-image{
+                    width: 100%;
+                    max-height: 200px;
+                }
+
+                .uh-change-photo-btn{
+                    position: relative;
+                    top: 45px;
+                    right: 10px;
+                    float: right;
+                    margin-top: -36px;
+                    color: white;
+                    text-shadow: 0px 0px 11px #000;
+                }
+            }
+        }
+    }
+}
+
+//**** CUSTOM ANIMATIONS *****//
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInUp {
+    animation-name: slideInUp;
+}

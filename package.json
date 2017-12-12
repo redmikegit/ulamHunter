@@ -1,0 +1,29 @@
+{
+  "name": "com.mobileapp.uh",
+  "version": "1.0.0",
+  "displayName": "Ulam Hunter",
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-statusbar": {}
+    }
+  },
+  "dependencies": {
+    "autolinker": "^1.6.0",
+    "cordova-android": "6.3.0",
+    "cordova-ios": "~4.5.3",
+    "cordova-plugin-camera": "~2.4.1",
+    "cordova-plugin-console": "~1.0.1",
+    "cordova-plugin-statusbar": "~1.0.1",
+    "cordova-plugin-whitelist": "~1.2.0",
+    "es6-promise-plugin": "git+https://github.com/vstirbu/PromisesPlugin.git",
+    "rateyo": "^2.3.3",
+    "swiper": "^4.0.6"
+  }
+}
